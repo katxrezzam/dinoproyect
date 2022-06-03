@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&family=Ubuntu:wght@500&display=swap');
+.container.index-c{
+    margin: 10px 20px;
+    max-width: 1500px;
+}
+.container.index-c .card{
+    width: 400px;
+    border-radius: 12px;
+    border: none;
+    background: #5E9026;
+}
+.container.index-c .card button.btn{
+    background: #3F2B0B;
+}
+.container.index-c .card button.btn:hover{
+    background: #5C4100;
+}
+.container.index-c .card a.btn{
+    height: 100%;
+    background: #DB8800;
+}
+.container.index-c .card a.btn:hover{
+    background: #FFB132;
+}
+.container.index-c #search{
+    font-size: 18px;
+    color: #fff;
+    font-weight: 800;
+}
+.container.index-c #add{
+    font-size: 18px;
+    color: #fff;
+    font-weight: 900;
+}
+.container.index-c .table-container table{
+    text-align: center;
+}
+.container.index-c .table-container{
+    margin-top: 50px;
+    padding: 0 45px;
+}
+.table-container thead{
+    padding: 45px;
+    background-color: #5E9026;
+}
+.table-container th{
+    padding: 25px;
+
+}
+.table-container td{
+    padding: 15px;
+}
+.table-container tr:hover{
+    padding: 15px;
+    background-color: #AFD08A;
+}
+.table-container tbody{
+    background: #fff;
+}

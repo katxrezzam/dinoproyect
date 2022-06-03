@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head th:replace="layout/shard :: head">
+</head>
+<body>
+    <div th:replace="layout/shard :: Sidebar"></div>
+    <section class="home-section">
+        <div class="home-title">
+            <span class="title">CATEGORY</span>
+        </div>
+        <div class="container index-c">
+            <form th:action="@{/categoria/buscar}" th:object="${categoria}" method="post">
+                <div class="card mt-5 p-3">
+                    <div class="row">
+                        <div class="col-8">
+                            <input type="text" placeholder="Enter a code" class="form-control" th:field="*{id}">
+                        </div>
+                        <div class="col-2">
+                            <button class="btn">
+                                <i class="bi bi-search" id="search"></i>
+                            </button>
+                        </div>
+                        <div class="col-2">
+                            <a th:href="@{/categoria/form}" class="btn">
+                                <i class="bi bi-plus" id="add"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="table-container">
+                <div class="row">
+                    <table class="table table-striped">
+                        <thead class="header">
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Descripcion</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="item: ${categorias}">
+                                <td th:text="${item.id}"></td>
+                                <td th:text="${item.nombre}"></td>
+                                <td th:text="${item.descripcion}"></td>
+                                <td>
+                                    <a class="btn btn-primary" th:href="@{/categoria/form/} + ${item.id}">
+                                        <i class="bi bi-gear-fill"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" th:href="@{/categoria/eliminar/} + ${item.id}">
+                                        <i class="bi bi-trash-fill"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script th:src="@{/js/main.js}"> </script>
+</body>
+</html>

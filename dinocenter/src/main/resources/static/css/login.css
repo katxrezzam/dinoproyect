@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&family=Ubuntu:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFEDC0;
+    background-image: url(../img/fondo_fosiles.png);
+    padding: 30px;
+}
+.container-login{
+    position: relative;
+    max-width: 850px;
+    width: 100%;
+    background: #5E9026;
+    padding: 40px 30px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    perspective: 2700px;
+}
+.container-login .cover{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 50%;
+    z-index: 98;
+    transition: all 1s ease;
+    transform-origin: left;
+    transform-style: preserve-3d;
+}
+.container-login .cover::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #AFD08A;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+.container-login #flip:checked ~ .cover{
+    transform: rotateY(-180deg);
+}
+.container-login .cover img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    backface-visibility: hidden;
+}
+.container-login .cover .back .backImg{
+    transform: rotateY(180deg);
+}
+form .form-content {
+    height: 100%;
+    width: 100%;
+    background: #5E9026;
+}
+.container-login .form-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.form-content .login-form, .form-content .signup-form{
+    width: calc(100% / 2 - 25px);
+}
+
+form .form-content .title{
+    position: relative;
+    font-size: 24px;
+    font-weight: 500;
+    color: #fff;
+}
+form .form-content .title::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+
+}
+form .signup-form .title:before{
+    width: 20px;
+}    
+form .form-content .input-boxes{
+    margin-top: 30px;
+}
+form .form-content .input-box{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    margin: 10px 0;
+    position: relative;
+}
+form .form-content .input-box-password{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    margin: 10px 0;
+    position: relative;
+}
+.form-content .input-box input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 12px;
+    padding: 0 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.form-content .input-password{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 12px;
+    padding: 0 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.form-content .input-box button{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 12px;
+    padding: 0 30px;
+    font-size: 16px;
+    font-weight: 500;
+    background: #3F2B0B;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+form .form-content .button{
+    margin-top: 40px;
+}
+.form-content .input-box button:hover{
+    background: #5C4100;
+}
+.form-content .input-box i{
+    position: absolute;
+    color: #3F2B0B;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+.form-content .input-box-password i{
+    position: absolute;
+    color: #3F2B0B;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 5px;
+}
+.form-content .input-box-password .toggle{
+    right: 15px;
+    cursor: pointer;
+}
+form .form-content .text{
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+}
+form .form-content .text a{
+    color: #3F2B0B;
+    text-decoration: none;
+}
+form .form-content .text a:hover{
+    text-decoration: underline;
+}
+form .form-content label{
+    color: #7A590A;
+    cursor: pointer;
+}
+form .form-content label:hover{
+    text-decoration: underline;
+}
+form .form-content .sign-up-text{
+    text-align: center;
+    margin-top: 25px;
+}
+.container-login #flip{
+    display: none;
+}
+@media (max-width:740px) {
+    .container-login .cover{
+        display: none;
+    }
+    .form-content .login-form, .form-content .signup-form{
+        width: 100%;
+    }
+    .form-content .signup-form{
+        display: none;
+    }
+    .container-login #flip:checked ~ form .signup-form{
+        display: block;
+    }
+    .container-login #flip:checked ~ form .login-form{
+        display: none;
+    }
+}

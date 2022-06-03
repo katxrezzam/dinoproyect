@@ -1,0 +1,32 @@
+
+.container.form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 80px 70px;
+}
+.container.form .card{
+    margin: 70px 70px;
+    border: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.container.form .btn.form{
+    background-color: #3F2B0B;
+    color: #fff;
+    font-size: 20px;
+}
+.container.form .card .card-header{
+    background: #5E9026;
+}
+.container.form .card .card-header h5{
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    margin: 10px 0;
+    color: #fff;
+}
+.container.form .card-body i{
+    color: #3F2B0B;
+    font-size: 25px;
+    font-weight: 600;
+}

@@ -1,0 +1,62 @@
+<html lang="es">
+<head th:replace="layout/shard :: head">
+</head>
+<body>
+<div th:replace="layout/shard :: Sidebar"></div>
+<section class="home-section">
+    <div class="home-title">
+        <span class="title"></span>
+    </div>
+    <div class="container form">
+        <div class="card mx-5">
+            <div class="card-header">
+                <h5 th:text="${titulo}"></h5>
+            </div>
+            <div class="card-body">
+                <form th:action="@{/producto/guardar}" th:object="${producto}" method="post">
+                    <div class="row px-5 d-flex align-items-center">
+                        <div class="col-1 mt-4">
+                            <i class="bi bi-tag-fill"></i>
+                        </div>
+                        <div class="col-5 mt-4">
+                            <input class="form-control" type="text" placeholder="Ingrese nombre" required th:field="*{nombre}">
+                        </div>
+                        <div class="col-1 mt-4">
+                            <i class="bi bi-telephone-fill"></i>
+                        </div>
+                        <div class="col-5 mt-4">
+                            <input class="form-control" type="text" placeholder="Ingrese celular" required th:field="*{precio}">
+                        </div>
+                        <input type="hidden" th:field="*{id}">
+                    </div>
+                    <div class="row px-5 d-flex align-items-center">
+                        <div class="col-1 mt-4">
+                            <i class="bi bi-envelope-fill"></i>
+                        </div>
+                        <div class="col-5 mt-4">
+                            <select class="form-select" th:field="*{distribuidor}">
+                                <option th:each="item : ${distribuidores}" th:value="${item.id}" th:text="${item.nombre}"></option>
+                            </select>
+                        </div>
+                        <div class="col-1 mt-4">
+                            <i class="bi bi-key-fill"></i>
+                        </div>
+                        <div class="col-5 mt-4">
+                            <select class="form-select" th:field="*{categoria}">
+                                <option th:each="item: ${categorias}" th:value="${item.id}" th:text="${item.nombre}"></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row px-5">
+                        <div class="col-12 text-md-center mt-4">
+                            <button type="submit" class="btn form">ENVIAR</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<script th:src="@{/js/main.js}"> </script>
+</body>
+</html>

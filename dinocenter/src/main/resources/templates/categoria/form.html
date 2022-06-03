@@ -1,0 +1,44 @@
+<html lang="es">
+<head th:replace="layout/shard :: head">
+</head>
+<body>
+    <div th:replace="layout/shard :: Sidebar"></div>
+    <section class="home-section">
+        <div class="home-title">
+            <span class="title"></span>
+        </div>
+        <div class="container form">
+            <div class="card mx-5">
+                <div class="card-header">
+                    <h5 th:text="${titulo}"></h5>
+                </div>
+                <div class="card-body">
+                    <form th:action="@{/categoria/guardar}" th:object="${categoria}" method="post">
+                        <div class="row px-5 d-flex align-items-center">
+                            <div class="col-1 mt-4">
+                                <i class="bi bi-tag-fill"></i>
+                            </div>
+                            <div class="col-5 mt-4">
+                                <input class="form-control" type="text" placeholder="Enter a name" required th:field="*{nombre}">
+                            </div>
+                            <div class="col-1 mt-4">
+                                <i class="bi bi-chat-fill"></i>
+                            </div>
+                            <div class="col-5 mt-4">
+                                <input class="form-control" type="text" placeholder="Enter a description" required th:field="*{descripcion}">
+                            </div>
+                            <input type="hidden" th:field="*{id}">
+                        </div>
+                        <div class="row px-5">
+                            <div class="col-12 text-md-center mt-4">
+                                <button type="submit" class="btn form">ENVIAR</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script th:src="@{/js/main.js}"> </script>
+</body>
+</html>
